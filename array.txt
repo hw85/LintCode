@@ -1,0 +1,25 @@
+//Second max number in an array
+
+
+int secondMax(int a[], int s)
+
+{
+    int max, sm;
+    
+int i=0;
+    max=a[i];
+    while(i<s-1)
+        {
+            if(max<a[i+1])
+                max=a[i+1];
+            i++;
+        }
+    for(int n=1; n<s-1;n++)
+    {
+        if(a[n]>a[n-1]&&a[n]<max)
+            sm=a[n];
+        else if (a[n]<a[n-1]&&a[n-1]<max)
+            sm=a[n-1];
+    }
+    return sm;
+}
